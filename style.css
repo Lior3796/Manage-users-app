@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+h6{
+    width: 100%;
+    margin-left: 15px;
+
+}
+.container{
+    width: 100%;
+}
+#row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Logo{
+    width: 100px;
+    height: 100px;
+}
+#indi {
+    display: flex;
+    justify-content: flex-end;
+}
+.bi bi-facebook{
+    width: 150px;
+    height: 150px;
+}
+form{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    border: 1px solid black;
+   width: 60%;
+
+}
+#containerCards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.bi{
+font-size: 40px;
+}

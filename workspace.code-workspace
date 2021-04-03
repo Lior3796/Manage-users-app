@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\Users\\lenovo\\Downloads\\images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "javaScriptProject"
+	}
+}

@@ -8,22 +8,37 @@ function getUsersArrayInfo(){
 }
 
 let usersArray; 
-async function getUserInfo(){
+async function getUserInfo() {
+
     let containerCards = document.getElementById("containerCards");
-    try{
+    class user {
+      constructor(firstName,lastName,email,phone,age,picture,index){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.age = age;
+        this.picture = picture;
+        this.index = index;
+      }
+    }
+
+    try {
     usersArray = await getUsersArrayInfo();
     usersArray.forEach(element => {
-        console.log(element);
+    let userObj = new user(element.name.first,element.name.last,element.email,
+      element.phone,element.age,element.picture,element.index);
+    
     containerCards.innerHTML += `<div class="card" style="width: 18rem;">
-    <button onclick ="openFullScreen(${element.index})"><img src="${element.picture}" class="card-img-top" alt="..."></button>
+    <button onclick ="openFullScreen(${userObj.index})"><img src="${userObj.picture}" class="card-img-top" alt="..."></button>
     <div class="card-body">
-      <h5 class="card-title">FirstName: ${element.name.first}</h5>
-      <h5 class="card-title">LastName: ${element.name.last}</h5>
-      <p class="card-text">Email: ${element.email}</p>
+      <h5 class="card-title">FirstName: ${userObj.firstName}</h5>
+      <h5 class="card-title">LastName: ${userObj.lastName}</h5>
+      <p class="card-text">Email: ${userObj.email}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">phone: ${element.phone}</li>
-      <li class="list-group-item">Age: ${element.age}</li>
+      <li class="list-group-item">phone: ${userObj.phone}</li>
+      <li class="list-group-item">Age: ${userObj.age}</li>
     </ul>
     <div class="card-body">
       <button onclick="addUser()" type="button" class="btn btn-primary">add user</button>
@@ -123,12 +138,6 @@ function addUser() {
           </div>
         </div>
       <div class="row">
-          <h6>image</h6>
-          <div class="col">
-            <input name="image" type="text" class="form-control" placeholder="image">
-          </div>
-      </div>
-      <div class="row">
           <h6>Email</h6>
           <div class="col">
             <input name="Email" id="userEmail" type="text" class="form-control" placeholder="Email">
@@ -155,12 +164,13 @@ let counterNewCard = 10;
 function addNewCard() {
   let container = document.getElementById("containerCards");
   let userForm = document.getElementById("userForm");
-  if(userForm[5].value !== userForm[6].value){
+  if(userForm[4].value !== userForm[5].value){
    alert("your email input not valid");
    userForm.remove();
    addUser();
   }
   else{
+    
     container.innerHTML += `  
     
       <div class="card" style="width: 18rem;">
@@ -172,7 +182,7 @@ function addNewCard() {
       <h5 class="card-title">LastName:
       ${userForm[1].value}
       </h5>
-      <p class="card-text">Email:${userForm[5].value}
+      <p class="card-text">Email:${userForm[4].value}
     </p>
     </div>
     <ul class="list-group list-group-flush">

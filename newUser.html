@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-    <form>
+    <form id="formUser">
         <div class="row">
             <h6>First name</h6>
           <div class="col">
@@ -38,12 +38,7 @@
               <input type="text" class="form-control" placeholder="PhoneNumber">
             </div>
           </div>
-        <div class="row">
-            <h6>image</h6>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="image">
-            </div>
-        </div>
+  
         <div class="row">
             <h6>Email</h6>
             <div class="col">
@@ -58,11 +53,11 @@
         </div>
 
         </div>
-        <button  class="btn btn-primary" type="submit">Submit form</button>
+        <button id="subButton" onclick="addDetails()"  class="btn btn-primary" type="submit">Submit form</button>
 
       </form>
 
     </div>
-      <script src="/main.js"></script>
+      <script src="/clone.js"></script>
 </body>
 </html>

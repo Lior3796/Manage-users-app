@@ -150,6 +150,8 @@ function addUser() {
 
 }
 let counterNewCard = 10;
+
+
 function addNewCard() {
   let container = document.getElementById("containerCards");
   let userForm = document.getElementById("userForm");
